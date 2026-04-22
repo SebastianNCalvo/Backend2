@@ -26,7 +26,7 @@
   "dependencies": {
     "connect-mongo": "^6.0.0",
     "cookie-parser": "^1.4.7",
-    "dotenv": "^17.4.0",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "mongoose": "9.3.0",

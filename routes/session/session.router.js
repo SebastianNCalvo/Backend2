@@ -2,7 +2,6 @@ import { Router } from "express";
 import session from "express-session";
 import isAuthenticated from "../cookie/isAuthenticated.js";
 import MongoStore from "connect-mongo";
-import { Products } from "../../config/models/product.model.js";
 import mongoose from "mongoose";
 
 const router = Router();
@@ -60,7 +59,6 @@ router.post('/login', (req, res) => {
 
 router.get('/dashboard', isAuthenticated, async (req, res) => {
     try {
-        const products = await Products.find()
         return res.status(200).json({msg:`Bienvenido ${req.session.user.username}`, products: products});
     } catch (error) {
         return res.status(401).json({msg: 'No hay session iniciada', error});
